@@ -1,0 +1,21 @@
+package com.aol.alkuznetsov.servlet;
+
+import com.aol.alkuznetsov.service.UserService;
+import java.io.IOException;
+import java.util.function.Supplier;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/users")
+public class UserServlet extends HttpServlet {
+
+    private final UserService userService = new UserService();
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Supplier<String> user = () -> "Alexander";
+    }
+}
